@@ -1,0 +1,11 @@
+.TableContainer {
+  padding-top:  20px;
+  margin-left: 40px;
+  margin-right: 40px;
+}
+
+
+.HeaderTable {
+  border-bottom-width: medium;
+  border-bottom-color: #000;
+}

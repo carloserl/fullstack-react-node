@@ -1,23 +1,26 @@
-import logo from './logo.svg';
+import {useEffect, useState} from 'react'
 import './App.css';
+import 'bootstrap/dist/css/bootstrap.min.css';
+import Header from './components/Header/Header';
+import TableData from './components/Table/Table';
+import {useDispatch,useSelector} from "react-redux"
+import { getFiles, getFilesList } from './redux/filesActions';
+
 
 function App() {
+
+  const disptach = useDispatch()
+  const {rows} = useSelector((state)=> state.files)
+
+  useEffect(() => {
+    disptach(getFiles())
+    disptach(getFilesList())
+}, []);
+
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <Header/> 
+     <TableData data={rows} />
     </div>
   );
 }

@@ -11,12 +11,12 @@ services:
     volumes:
       - ./server:/app
   frontend:
-    container_name: client
+    container_name: frontend
     build:
-      context: ./client
+      context: ./frontend
       dockerfile: Dockerfile
     volumes:
-      - ./client:/app
+      - ./frontend:/app
       - /app/node_modules
     ports:
       - "3000:3000"

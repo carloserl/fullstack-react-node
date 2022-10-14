@@ -1,6 +1,11 @@
 # fullstack-react-node
 
 
-comandos para correr Develpment Mode docker-compose up -d --build
+comandos para correr los container docker-compose up -d --build
 
-comandos para correr Production Mode docker-compose -f docker-compose-prod.yml up -d --build
+EL app se vera en localhost:8080
+
+el back se podra ver localhost:3001
+
+NOTA: el front se podra ver en localhost:3000 pero no llega a las api ya q esta funcionando por medio de el proxypass /be qyue el nginx maneja
+

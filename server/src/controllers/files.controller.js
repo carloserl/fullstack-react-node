@@ -18,7 +18,6 @@ export const getFiles = async (req, res) => {
                         finalResponse.push(result)
                     }
                 } catch (error) {
-                    console.log("error", file)
                 }
             }
             return res.json({ message: "OK",data: finalResponse });
@@ -48,12 +47,12 @@ export const getFilesList = async (_, res) => {
 }
 
 
-const getCsv =  async (req, res,  fileName)  => {
+const getCsv =  async (_, res,  fileName)  => {
     try {
         const result =  await getFile(fileName)
         const finalResponse = formatElement(fileName, result.data);
       
-        return res.json({ message: "OK",data: finalResponse });
+        return res.json({ message: "OK",data: [finalResponse] });
     } catch (error) {
         return res.status(500).json({
             message: error,
